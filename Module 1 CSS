@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+nav li {
+  margin-right: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Welcome Banner */
+#welcomeBanner {
+  background-color: lightblue;
+  padding: 15px;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* Table Gallery */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  padding: 10px;
+}
+.event-img {
+  border: 2px solid #aaa;
+  width: 150px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.event-img.enlarged {
+  transform: scale(1.5);
+}
+
+/* Form Styling */
+form {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+  max-width: 500px;
+}
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+input[type="submit"], button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Video */
+#videoInvite {
+  text-align: center;
+  margin: 30px;
+}
+
+footer {
+  text-align: center;
+  background: #eee;
+  padding: 20px;
+}
