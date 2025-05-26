@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Community Event Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Home -->
+    <section id="home">
+      <h1>Welcome to the Community Event Portal</h1>
+      <div id="welcomeBanner">
+        Hello, resident! <span style="color: red; font-weight: bold;">Special Offer!</span>
+      </div>
+    </section>
+
+    <!-- Events Gallery -->
+    <section id="events">
+      <h2>Past Community Events</h2>
+      <table>
+        <caption>Event Highlights</caption>
+        <tr>
+          <td><img src="event1.jpg" alt="Picnic" title="Picnic" class="event-img" ondblclick="toggleZoom(this)" /></td>
+          <td><img src="event2.jpg" alt="Fair" title="Fair" class="event-img" ondblclick="toggleZoom(this)" /></td>
+          <td><img src="event3.jpg" alt="Cleanup" title="Cleanup" class="event-img" ondblclick="toggleZoom(this)" /></td>
+        </tr>
+        <tr>
+          <td><img src="event4.jpg" alt="Marathon" title="Marathon" class="event-img" ondblclick="toggleZoom(this)" /></td>
+          <td><img src="event5.jpg" alt="Workshop" title="Workshop" class="event-img" ondblclick="toggleZoom(this)" /></td>
+          <td><img src="event6.jpg" alt="Meeting" title="Meeting" class="event-img" ondblclick="toggleZoom(this)" /></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Contact and Registration -->
+    <section id="contact">
+      <h2>Register for an Event</h2>
+      <form onsubmit="showConfirmation(event)">
+        <label>
+          Name:
+          <input type="text" name="name" placeholder="Your Name" required autofocus />
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" placeholder="Your Email" required />
+        </label>
+        <label>
+          Date:
+          <input type="date" name="date" required />
+        </label>
+        <label>
+          Event Type:
+          <select id="eventType" onchange="showFee(this.value); savePreference()" required>
+            <option value="">Select</option>
+            <option value="picnic">Community Picnic</option>
+            <option value="workshop">Workshop</option>
+            <option value="meeting">Neighborhood Meeting</option>
+          </select>
+        </label>
+        <p class="highlight" id="feeDisplay"></p>
+        <label>
+          Phone:
+          <input type="tel" id="phone" onblur="validatePhone(this)" placeholder="e.g. 1234567890" />
+        </label>
+        <label>
+          Message:
+          <textarea id="feedback" onkeyup="countCharacters()" placeholder="Your message..."></textarea>
+        </label>
+        <p>Characters: <span id="charCount">0</span></p>
+        <input type="submit" value="Register" />
+        <output id="confirmation"></output>
+      </form>
+      <button onclick="clearPreferences()">Clear Preferences</button>
+    </section>
+
+    <!-- Video Invite -->
+    <section id="videoInvite">
+      <h2>You're Invited!</h2>
+      <video width="320" height="240" controls oncanplay="videoReady()">
+        <source src="event_invite.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p id="videoStatus"></p>
+    </section>
+
+    <!-- Geolocation -->
+    <section>
+      <h2>Find Nearby Events</h2>
+      <button onclick="findLocation()">Find Nearby Events</button>
+      <p id="locationOutput"></p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Local Community Council</p>
+  </footer>
+
+  <!-- Link external JS -->
+  <script src="portal.js" defer></script>
+
+</body>
+</html>
